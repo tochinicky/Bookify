@@ -1,4 +1,5 @@
-﻿using Bookify.Domain;
+﻿using Bookify.Application;
+using Bookify.Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,10 +22,18 @@ public sealed class ApplicationDbContext : DbContext, IUnitOfWork
     //publishing domain events using EF
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
-        var result = await base.SaveChangesAsync(cancellationToken);
+        try
+        {
+            var result = await base.SaveChangesAsync(cancellationToken);
 
-        await PublishDomainEventsAsync();
-        return result;
+            await PublishDomainEventsAsync();
+            return result;
+        }
+        catch (DbUpdateConcurrencyException exception)
+        {
+
+            throw new ConcurrencyException("Concurrency exception occurred", exception);
+        }
     }
 
     private async Task PublishDomainEventsAsync()

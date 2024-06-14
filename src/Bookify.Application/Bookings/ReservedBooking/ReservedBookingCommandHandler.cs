@@ -40,10 +40,18 @@ internal sealed class ReservedBookingCommandHandler : ICommandHandler<ReservedBo
             return Result.Failure<Guid>(BookingErrors.Overlap);
         }
 
-        var booking = Booking.Reserve(apartment, user.Id, duration, _dateTimeProvider.UtcNow, _pricingService);
-        _bookingRepository.Add(booking);
+        try
+        {
+            var booking = Booking.Reserve(apartment, user.Id, duration, _dateTimeProvider.UtcNow, _pricingService);
+            _bookingRepository.Add(booking);
 
-        await _unitOfWork.SaveChangesAsync(cancellationToken);
-        return booking.Id;
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
+            return booking.Id;
+        }
+        catch (ConcurrencyException)
+        {
+
+            return Result.Failure<Guid>(BookingErrors.Overlap);
+        }
     }
 }

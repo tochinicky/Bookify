@@ -33,6 +33,8 @@ internal sealed class ApartmentConfiguration : IEntityTypeConfiguration<Apartmen
                 .HasConversion(currency => currency.Code, code => Currency.FromCode(code));
         });
 
+        builder.Property<uint>("Version").IsRowVersion();//defining a shadow property which is the version telling Ef that row should be interpreted as a column for optimistic concurrency
+
 
     }
 }
