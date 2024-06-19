@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.containers/database
+/.vs/Bookify
+/bin/Debug
+/obj
+/src/Bookify.Api/bin/Debug/net8.0
+/src/Bookify.Application/bin/Debug/net8.0
+/src/Bookify.Domain/bin/Debug/net8.0
+/src/Bookify.Infrastructure/bin/Debug/net8.0
