@@ -1,6 +1,6 @@
-@Bookify.Api_HostAddress = http://localhost:5087
+@Bookify.Api_HostAddress = https://localhost:5001
 
-GET {{Bookify.Api_HostAddress}}/weatherforecast/
+GET {{Bookify.Api_HostAddress}}/api/apartments?startDate=07-20-2023&endDate=07-31-2023
 Accept: application/json
 
 ###

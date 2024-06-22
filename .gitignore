@@ -244,3 +244,4 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+/src/Bookify.Api/appsettings.Development.json
