@@ -2,9 +2,9 @@
 
 public sealed class ValidationException : Exception
 {
-    public IEnumerable<ValidationError> Error { get; }
+    public IEnumerable<ValidationError> Errors { get; }
     public ValidationException(IEnumerable<ValidationError> errors)
     {
-        Error = errors;
+        Errors = errors;
     }
 }

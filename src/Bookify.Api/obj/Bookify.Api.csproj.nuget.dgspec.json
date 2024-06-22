@@ -1,36 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "/Users/user/Bookify/src/Bookify.Api/Bookify.Api.csproj": {}
+    "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Api\\Bookify.Api.csproj": {}
   },
   "projects": {
-    "/Users/user/Bookify/src/Bookify.Api/Bookify.Api.csproj": {
+    "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Api\\Bookify.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/user/Bookify/src/Bookify.Api/Bookify.Api.csproj",
+        "projectUniqueName": "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Api\\Bookify.Api.csproj",
         "projectName": "Bookify.Api",
-        "projectPath": "/Users/user/Bookify/src/Bookify.Api/Bookify.Api.csproj",
-        "packagesPath": "/Users/user/.nuget/packages/",
-        "outputPath": "/Users/user/Bookify/src/Bookify.Api/obj/",
+        "projectPath": "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Api\\Bookify.Api.csproj",
+        "packagesPath": "C:\\Users\\tochukwuonyeamah\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/user/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\tochukwuonyeamah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/user/Bookify/src/Bookify.Application/Bookify.Application.csproj": {
-                "projectPath": "/Users/user/Bookify/src/Bookify.Application/Bookify.Application.csproj"
+              "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Application\\Bookify.Application.csproj": {
+                "projectPath": "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Application\\Bookify.Application.csproj"
               },
-              "/Users/user/Bookify/src/Bookify.Infrastructure/Bookify.Infrastructure.csproj": {
-                "projectPath": "/Users/user/Bookify/src/Bookify.Infrastructure/Bookify.Infrastructure.csproj"
+              "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Infrastructure\\Bookify.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Infrastructure\\Bookify.Infrastructure.csproj"
               }
             }
           }
@@ -50,9 +53,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Bogus": {
+              "target": "Package",
+              "version": "[35.5.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.6, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.20.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -78,34 +89,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/user/Bookify/src/Bookify.Application/Bookify.Application.csproj": {
+    "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Application\\Bookify.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/user/Bookify/src/Bookify.Application/Bookify.Application.csproj",
+        "projectUniqueName": "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Application\\Bookify.Application.csproj",
         "projectName": "Bookify.Application",
-        "projectPath": "/Users/user/Bookify/src/Bookify.Application/Bookify.Application.csproj",
-        "packagesPath": "/Users/user/.nuget/packages/",
-        "outputPath": "/Users/user/Bookify/src/Bookify.Application/obj/",
+        "projectPath": "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Application\\Bookify.Application.csproj",
+        "packagesPath": "C:\\Users\\tochukwuonyeamah\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/user/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\tochukwuonyeamah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/user/Bookify/src/Bookify.Domain/Bookify.Domain.csproj": {
-                "projectPath": "/Users/user/Bookify/src/Bookify.Domain/Bookify.Domain.csproj"
+              "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Domain\\Bookify.Domain.csproj": {
+                "projectPath": "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Domain\\Bookify.Domain.csproj"
               }
             }
           }
@@ -158,26 +172,29 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/user/Bookify/src/Bookify.Domain/Bookify.Domain.csproj": {
+    "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Domain\\Bookify.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/user/Bookify/src/Bookify.Domain/Bookify.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Domain\\Bookify.Domain.csproj",
         "projectName": "Bookify.Domain",
-        "projectPath": "/Users/user/Bookify/src/Bookify.Domain/Bookify.Domain.csproj",
-        "packagesPath": "/Users/user/.nuget/packages/",
-        "outputPath": "/Users/user/Bookify/src/Bookify.Domain/obj/",
+        "projectPath": "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Domain\\Bookify.Domain.csproj",
+        "packagesPath": "C:\\Users\\tochukwuonyeamah\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/user/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\tochukwuonyeamah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -222,34 +239,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/user/Bookify/src/Bookify.Infrastructure/Bookify.Infrastructure.csproj": {
+    "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Infrastructure\\Bookify.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/user/Bookify/src/Bookify.Infrastructure/Bookify.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Infrastructure\\Bookify.Infrastructure.csproj",
         "projectName": "Bookify.Infrastructure",
-        "projectPath": "/Users/user/Bookify/src/Bookify.Infrastructure/Bookify.Infrastructure.csproj",
-        "packagesPath": "/Users/user/.nuget/packages/",
-        "outputPath": "/Users/user/Bookify/src/Bookify.Infrastructure/obj/",
+        "projectPath": "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Infrastructure\\Bookify.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\tochukwuonyeamah\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/user/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\tochukwuonyeamah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/user/Bookify/src/Bookify.Application/Bookify.Application.csproj": {
-                "projectPath": "/Users/user/Bookify/src/Bookify.Application/Bookify.Application.csproj"
+              "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Application\\Bookify.Application.csproj": {
+                "projectPath": "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Application\\Bookify.Application.csproj"
               }
             }
           }
@@ -275,13 +295,16 @@
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.6, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.19.4, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
@@ -304,7 +327,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
