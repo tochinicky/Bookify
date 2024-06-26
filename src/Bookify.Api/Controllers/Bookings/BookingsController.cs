@@ -1,4 +1,6 @@
 ﻿using Bookify.Application;
+using Bookify.Application.Bookings.GetBooking;
+using Bookify.Application.Bookings.ReserveBooking;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,7 +28,7 @@ public class BookingsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> ReserveBooking(ReserveBookingRequest request, CancellationToken cancellationToken)
     {
-        var command = new ReservedBookingCommand(request.ApartmentId, request.UserId, request.StartDate,
+        var command = new ReserveBookingCommand(request.ApartmentId, request.UserId, request.StartDate,
         request.EndDate);
 
         var result = await _sender.Send(command);

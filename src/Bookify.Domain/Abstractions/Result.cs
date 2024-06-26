@@ -11,7 +11,7 @@ public class Result
             throw new InvalidOperationException();
         }
 
-        if (isSuccess && error == Error.None)
+        if (!isSuccess && error == Error.None)
         {
             throw new InvalidOperationException();
         }
