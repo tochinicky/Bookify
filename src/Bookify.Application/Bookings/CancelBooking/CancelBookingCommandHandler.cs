@@ -1,5 +1,6 @@
 ﻿
 using Bookify.Domain;
+using Bookify.Domain.Bookings;
 
 namespace Bookify.Application.Bookings.CancelBooking;
 

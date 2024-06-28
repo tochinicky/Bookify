@@ -1,5 +1,6 @@
 ﻿
 using Bookify.Domain;
+using Bookify.Domain.Bookings;
 using MediatR;
 
 namespace Bookify.Application.Bookings.ReserveBooking;

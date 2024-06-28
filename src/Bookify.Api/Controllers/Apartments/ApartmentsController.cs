@@ -1,4 +1,6 @@
-﻿using Bookify.Application;
+﻿using Asp.Versioning;
+using Bookify.Api.Controllers;
+using Bookify.Application;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +9,8 @@ namespace Bookify.Api;
 
 [Authorize]
 [ApiController]
-[Route("api/apartments")]
+[ApiVersion(ApiVersions.V1)]
+[Route("api/v{version:apiVersion}/apartments")]
 public class ApartmentsController : ControllerBase
 {
     private readonly ISender _sender;
