@@ -1,4 +1,5 @@
-﻿using Bookify.Domain;
+﻿using Bookify.Application.Abstractions.Behaviors;
+using Bookify.Domain;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,6 +14,7 @@ public static class DependencyInjection
             configuration.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
             configuration.AddOpenBehavior(typeof(LoggingBehavior<,>));
             configuration.AddOpenBehavior(typeof(ValidationBehavior<,>));
+            configuration.AddOpenBehavior(typeof(QueryCachingBehavior<,>));
         });
 
         services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
