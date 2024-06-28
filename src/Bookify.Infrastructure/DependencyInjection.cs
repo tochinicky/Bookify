@@ -1,8 +1,10 @@
 ﻿using Bookify.Application;
 using Bookify.Application.Abstractions.Authentication;
+using Bookify.Application.Caching;
 using Bookify.Domain;
 using Bookify.Infrastructure.Authentication;
 using Bookify.Infrastructure.Authorization;
+using Bookify.Infrastructure.Caching;
 using Dapper;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -29,6 +31,8 @@ public static class DependencyInjection
         AddAuthentication(services, configuration);
 
         AddAuthorization(services);
+
+        AddCaching(services,configuration);
         return services;
     }
 
@@ -91,5 +95,13 @@ public static class DependencyInjection
             new SqlConnectionFactory(connectionString)
         );
         SqlMapper.AddTypeHandler(new DateOnlyTypeHandler());
+    }
+
+    private static void AddCaching(IServiceCollection services, IConfiguration configuration)
+    {
+        var connectionString = configuration.GetConnectionString("Cache") ?? throw new ArgumentNullException(nameof(configuration));
+        services.AddStackExchangeRedisCache(options=>options.Configuration = connectionString);
+
+        services.AddSingleton<ICacheService, CacheService>();
     }
 }
