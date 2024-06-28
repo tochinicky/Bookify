@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "MXvLHJER+rA=",
+  "dgSpecHash": "4tynsn9H2Ts=",
   "success": true,
   "projectFilePath": "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Infrastructure\\Bookify.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\tochukwuonyeamah\\.nuget\\packages\\asp.versioning.abstractions\\8.1.0\\asp.versioning.abstractions.8.1.0.nupkg.sha512",
+    "C:\\Users\\tochukwuonyeamah\\.nuget\\packages\\asp.versioning.http\\8.1.0\\asp.versioning.http.8.1.0.nupkg.sha512",
+    "C:\\Users\\tochukwuonyeamah\\.nuget\\packages\\asp.versioning.mvc\\8.1.0\\asp.versioning.mvc.8.1.0.nupkg.sha512",
+    "C:\\Users\\tochukwuonyeamah\\.nuget\\packages\\asp.versioning.mvc.apiexplorer\\8.1.0\\asp.versioning.mvc.apiexplorer.8.1.0.nupkg.sha512",
     "C:\\Users\\tochukwuonyeamah\\.nuget\\packages\\aspnetcore.healthchecks.npgsql\\8.0.1\\aspnetcore.healthchecks.npgsql.8.0.1.nupkg.sha512",
     "C:\\Users\\tochukwuonyeamah\\.nuget\\packages\\aspnetcore.healthchecks.redis\\8.0.1\\aspnetcore.healthchecks.redis.8.0.1.nupkg.sha512",
     "C:\\Users\\tochukwuonyeamah\\.nuget\\packages\\aspnetcore.healthchecks.uris\\8.0.1\\aspnetcore.healthchecks.uris.8.0.1.nupkg.sha512",
