@@ -8,6 +8,7 @@ using Bookify.Domain.Reviews;
 using Bookify.Infrastructure.Authentication;
 using Bookify.Infrastructure.Authorization;
 using Bookify.Infrastructure.Caching;
+using Bookify.Infrastructure.Outbox;
 using Bookify.Infrastructure.Repositories;
 using Dapper;
 using Microsoft.AspNetCore.Authentication;
@@ -17,6 +18,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Quartz;
 using AuthenticationOptions = Bookify.Infrastructure.Authentication.AuthenticationOptions;
 using AuthenticationService = Bookify.Infrastructure.Authentication.AuthenticationService;
 using IAuthenticationService = Bookify.Application.Abstractions.Authentication.IAuthenticationService;
@@ -39,6 +41,8 @@ public static class DependencyInjection
         AddCaching(services,configuration);
         AddHealthChecks(services,configuration);
         AddApiVersioning(services);
+
+        AddBackgroundJobs(services,configuration);
         return services;
     }
 
@@ -135,5 +139,16 @@ public static class DependencyInjection
                 options.GroupNameFormat = "'v'V";
                 options.SubstituteApiVersionInUrl = true;
             });
+    }
+
+    private static void AddBackgroundJobs(IServiceCollection services, IConfiguration configuration)
+    {
+        services.Configure<OutboxOptions>(configuration.GetSection("Outbox"));
+
+        services.AddQuartz();
+
+        services.AddQuartzHostedService(options => options.WaitForJobsToComplete = true);
+
+        //services.ConfigureOptions<ProcessOutboxMessagesJobSetup>();
     }
 }
