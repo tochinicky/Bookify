@@ -11,7 +11,7 @@ services:
       - bookify-db
 
   bookify-db:
-    image: tochinicky/bookify-db:latest
+    image: postgres:latest
     container_name: Bookify.Db
     environment:
       - POSTGRES_DB=bookify
