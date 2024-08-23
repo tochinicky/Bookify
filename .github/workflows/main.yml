@@ -65,6 +65,3 @@ jobs:
         images: |
           tochinicky/bookifyapi:latest
           tochinicky/bookify-db:latest
-
-        docker-compose-file: './docker-compose.yml'
-        slot-name: production
