@@ -29,13 +29,8 @@ jobs:
 
     - name: Build and push Docker images
       run: |
-        # Build and push bookifyapi
-        docker build -t tochinicky/bookifyapi:latest -f src/Bookify.Api/Dockerfile .
-        docker push tochinicky/bookifyapi:latest
-
-        # Build and push bookify-db
-        docker build -t tochinicky/bookify-db:latest -f src/Bookify.Db/Dockerfile .
-        docker push tochinicky/bookify-db:latest
+        POSTGRES_USER=${{ secrets.POSTGRES_USER }} POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} docker-compose -f docker-compose.yml build
+        docker-compose -f docker-compose.yml push
 
   deploy:
     runs-on: ubuntu-latest
