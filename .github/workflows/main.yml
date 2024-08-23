@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-permissions:
-  id-token: write
-  contents: read
    
 jobs:
   build:
@@ -32,8 +29,13 @@ jobs:
 
     - name: Build and push Docker images
       run: |
-        POSTGRES_USER=${{ secrets.POSTGRES_USER }} POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} docker-compose -f docker-compose.yml build
-        docker-compose -f docker-compose.yml push
+        # Build and push bookifyapi
+        docker build -t tochinicky/bookifyapi:latest -f src/Bookify.Api/Dockerfile .
+        docker push tochinicky/bookifyapi:latest
+
+        # Build and push bookify-db
+        docker build -t tochinicky/bookify-db:latest -f src/Bookify.Db/Dockerfile .
+        docker push tochinicky/bookify-db:latest
 
   deploy:
     runs-on: ubuntu-latest
@@ -48,7 +50,7 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        
+    
     - name: Log in to Azure
       uses: azure/login@v2
       with:
@@ -64,6 +66,5 @@ jobs:
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         images: |
           tochinicky/bookifyapi:latest
-          tochinicky/bookify-db:latest
         docker-compose-file: './docker-compose.yml'
         slot-name: production
