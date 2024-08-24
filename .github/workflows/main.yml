@@ -31,7 +31,14 @@ jobs:
 
     - name: Build and push Docker images
       run: |
-        POSTGRES_USER=${{ secrets.POSTGRES_USER }} POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} docker-compose -f docker-compose.yml build
+        POSTGRES_USER=${{ secrets.POSTGRES_USER }}
+        POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}
+        DB_HOST=${{ secrets.DB_HOST }}
+        DB_PORT=${{ secrets.DB_PORT }}
+        DB_NAME=${{ secrets.DB_NAME }}
+        ADMIN_CLIENT_SECRET=${{ secrets.ADMIN_CLIENT_SECRET }}
+        AUTH_CLIENT_SECRET=${{ secrets.AUTH_CLIENT_SECRET }}
+        docker-compose -f docker-compose.yml build
         docker-compose -f docker-compose.yml push
 
   deploy:
