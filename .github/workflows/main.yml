@@ -65,3 +65,9 @@ jobs:
           tochinicky/bookifyapi:latest
         docker-compose-file: './docker-compose.yml'
         slot-name: production
+      env:
+        DB_HOST: ${{ secrets.DB_HOST }}
+        DB_PORT: ${{ secrets.DB_PORT }}
+        DB_NAME: ${{ secrets.DB_NAME }}
+        DB_USERNAME: ${{ secrets.DB_USERNAME }}
+        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
