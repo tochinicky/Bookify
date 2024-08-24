@@ -13,6 +13,14 @@ services:
 
     depends_on:
       - bookify-db
+    environment:
+      - KeyCloak__BaseUrl=http://bookify-idp:8080
+      - KeyCloak__AdminUrl=http://bookify-idp:8080/admin/realms/bookify/
+      - KeyCloak__TokenUrl=http://bookify-idp:8080/realms/bookify/protocol/openid-connect/token
+      - KeyCloak__AdminClientId=bookify-admin-client
+      - KeyCloak__AdminClientSecret=${ADMIN_CLIENT_SECRET}
+      - KeyCloak__AuthClientId=bookify-auth-client
+      - KeyCloak__AuthClientSecret=${AUTH_CLIENT_SECRET}
 
   bookify-db:
     image: postgres:latest
