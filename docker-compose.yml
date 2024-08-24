@@ -10,6 +10,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ConnectionStrings__Database=Host=${DB_HOST};Port=${DB_PORT};Database=${DB_NAME};Username=${DB_USERNAME};Password=${DB_PASSWORD}
+      - ConnectionStrings__Cache=${CACHE_CONNECTION}
       - KeyCloak__BaseUrl=http://bookify-idp:8080
       - KeyCloak__AdminUrl=http://bookify-idp:8080/admin/realms/bookify/
       - KeyCloak__TokenUrl=http://bookify-idp:8080/realms/bookify/protocol/openid-connect/token
