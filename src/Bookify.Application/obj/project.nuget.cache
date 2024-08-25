@@ -1,17 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "dfOzyNv+B0giWcHRxjM+OJaKnDBj21BJe+Di9OD2uE2vKJPHmy9YN6ubrnbLZUwnY3mOw8Jrpbs+u9FH3uMQIQ==",
+  "dgSpecHash": "RQ7plcalMv8=",
   "success": true,
-  "projectFilePath": "/Users/user/Bookify/src/Bookify.Application/Bookify.Application.csproj",
+  "projectFilePath": "C:\\Users\\tochukwuonyeamah\\Desktop\\Bookify\\src\\Bookify.Application\\Bookify.Application.csproj",
   "expectedPackageFiles": [
-    "/Users/user/.nuget/packages/dapper/2.1.35/dapper.2.1.35.nupkg.sha512",
-    "/Users/user/.nuget/packages/fluentvalidation/11.9.2/fluentvalidation.11.9.2.nupkg.sha512",
-    "/Users/user/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.9.2/fluentvalidation.dependencyinjectionextensions.11.9.2.nupkg.sha512",
-    "/Users/user/.nuget/packages/mediatr/12.3.0/mediatr.12.3.0.nupkg.sha512",
-    "/Users/user/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
-    "/Users/user/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.1/microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
-    "/Users/user/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.1/microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512",
-    "/Users/user/.nuget/packages/serilog/4.0.0/serilog.4.0.0.nupkg.sha512"
+    "C:\\Users\\tochukwuonyeamah\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
+    "C:\\Users\\tochukwuonyeamah\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
+    "C:\\Users\\tochukwuonyeamah\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.2\\fluentvalidation.dependencyinjectionextensions.11.9.2.nupkg.sha512",
+    "C:\\Users\\tochukwuonyeamah\\.nuget\\packages\\mediatr\\12.3.0\\mediatr.12.3.0.nupkg.sha512",
+    "C:\\Users\\tochukwuonyeamah\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\tochukwuonyeamah\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\tochukwuonyeamah\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.1\\microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\tochukwuonyeamah\\.nuget\\packages\\serilog\\4.0.0\\serilog.4.0.0.nupkg.sha512"
   ],
   "logs": []
 }
