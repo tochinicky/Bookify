@@ -7,8 +7,12 @@ services:
     build:
       context: .
       dockerfile: src/Bookify.Api/Dockerfile
+    volumes:
+      #- ./src/Bookify.Api/certificate.pfx:/https/certificate.pfx
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
     environment:
-      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_ENVIRONMENT= ${ENVIRONMENT}
       - ConnectionStrings__Database=Host=${DB_HOST};Port=${DB_PORT};Database=${DB_NAME};Username=${DB_USERNAME};Password=${DB_PASSWORD}
       - ConnectionStrings__Cache=${CACHE_CONNECTION}
       - KeyCloak__BaseUrl=http://bookify-idp:8080
@@ -18,7 +22,10 @@ services:
       - KeyCloak__AdminClientSecret=${ADMIN_CLIENT_SECRET}
       - KeyCloak__AuthClientId=bookify-auth-client
       - KeyCloak__AuthClientSecret=${AUTH_CLIENT_SECRET}
+      - ASPNETCORE_URLS=http://+:5001
 
+    ports:
+      - 5001:5001
     depends_on:
       - bookify-db
 
