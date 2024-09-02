@@ -35,7 +35,7 @@ jobs:
           AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS}}
     - name: Build and push image to ACR
       run: |
-        docker build -t ${{secrets.ACR_NAME}}.azurecr.io/bookifyapi:latest -f src/Bookify.Api/Dockerfile .
+        docker build -t ${{secrets.ACR_NAME}}.azurecr.io/samples/tochinicky/bookifyapi:latest -f src/Bookify.Api/Dockerfile .
         docker push ${{secrets.ACR_NAME}}.azurecr.io/samples/tochinicky/bookifyapi:latest
       env:
         DB_HOST: ${{ secrets.DB_HOST }}
