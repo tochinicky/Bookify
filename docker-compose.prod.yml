@@ -2,11 +2,7 @@ version: "3.4"
 
 services:
   bookify.api:
-    image: tochinicky/bookifyapi
-    container_name: Bookify.Api
-    build:
-      context: .
-      dockerfile: src/Bookify.Api/Dockerfile
+    image: bookify.azurecr.io/samples/tochinicky/bookifyapi:latest
 
     environment:
       - ASPNETCORE_ENVIRONMENT= ${ENVIRONMENT}
@@ -19,21 +15,24 @@ services:
       - KeyCloak__AdminClientSecret=${ADMIN_CLIENT_SECRET}
       - KeyCloak__AuthClientId=bookify-auth-client
       - KeyCloak__AuthClientSecret=${AUTH_CLIENT_SECRET}
+
+    ports:
+      - "5000: 5000"
      
     depends_on:
-      - bookify-db
+      - bookify-idb
 
-  bookify-db:
-    image: postgres:latest
-    container_name: Bookify.Db
-    environment:
-      - POSTGRES_DB=bookify
-      - POSTGRES_USER={POSTGRES_USER}
-      - POSTGRES_PASSWORD={POSTGRES_PASSWORD}
-    volumes:
-      - ./.containers/database:/var/lib/postgresql/data
-    ports:
-      - 5432:5432
+  # bookify-db:
+  #   image: postgres:latest
+  #   container_name: Bookify.Db
+  #   environment:
+  #     - POSTGRES_DB=bookify
+  #     - POSTGRES_USER={POSTGRES_USER}
+  #     - POSTGRES_PASSWORD={POSTGRES_PASSWORD}
+  #   volumes:
+  #     - ./.containers/database:/var/lib/postgresql/data
+  #   ports:
+  #     - 5432:5432
 
   bookify-idp:
     image: quay.io/keycloak/keycloak:latest
@@ -43,7 +42,7 @@ services:
       - KEYCLOAK_ADMIN=admin
       - KEYCLOAK_ADMIN_PASSWORD=admin
     volumes:
-      - ./.containers/identity:/opt/keycloak/data
+      # - ./.containers/identity:/opt/keycloak/data
       - ./.files/bookify-realm-export.json:/opt/keycloak/data/import/realm.json
     ports:
       - 18080:8080
@@ -57,9 +56,9 @@ services:
       - 5341:5341
       - 8081:80
 
-  bookify-redis:
-    image: redis:latest
-    container_name: Bookify.Redis
-    restart: always
-    ports:
-      - "6379:6379"
+  # bookify-redis:
+  #   image: redis:latest
+  #   container_name: Bookify.Redis
+  #   restart: always
+  #   ports:
+  #     - "6379:6379"
