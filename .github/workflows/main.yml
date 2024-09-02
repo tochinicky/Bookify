@@ -61,12 +61,9 @@ jobs:
     #     password: ${{ secrets.DOCKER_PASSWORD }}
     
     - name: Log in to Azure
-      uses: azure/login@v2
-      with:
-        client-id: ${{ secrets.AZURE_CLIENT_ID }}
-        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-        client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
-        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      run: |
+        echo "${{secrets.AZURE_CREDENTIALS}}" > azure_credentials.json
+        az login --service-principal --username ${{secrets.AZURE_CLIENT_ID}} --password ${{secrets.AZURE_CLIENT_SECRET}} --tenant ${{secrets.AZURE_TENANT_ID}}
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
