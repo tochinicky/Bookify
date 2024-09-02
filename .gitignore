@@ -247,3 +247,7 @@ paket-files/
 .idea/
 *.sln.iml
 /src/Bookify.Api/appsettings.Development.json
+/docker-compose.dev.yml
+/docker-compose.dev.override.yml
+/docker-compose.dev.vs.debug.yml
+/docker-compose.dev.vs.release.yml
