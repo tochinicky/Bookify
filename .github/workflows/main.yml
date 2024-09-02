@@ -71,8 +71,7 @@ jobs:
         app-name: 'bookify'
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         images: |
-          "${{secrets.ACR_NAME}}.azurecr.io/samples/tochinicky/bookifyapi:latest"
-           docker-compose-file: 'docker-compose.prod.yml'
+          "${{secrets.ACR_NAME}}.azurecr.io/samples/tochinicky/bookifyapi:latest" docker-compose-file: './docker-compose.prod.yml'
         slot-name: production
       env:
         DB_HOST: ${{ secrets.DB_HOST }}
