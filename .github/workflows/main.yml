@@ -32,7 +32,7 @@ jobs:
     - name: Build and push image to ACR
       run: |
         az acr login --name ${{secrets.ACR_NAME}}
-        docker build -t ${{secrets.ACR_NAME}}.azurecr.io/bookifyapi:latest -f src/Bookify.Api/Dockerfile .
+        docker build -t ${{secrets.ACR_NAME}}.azurecr.io/bookifyapi:latest .
         docker push ${{secrets.ACR_NAME}}.azurecr.io/bookifyapi:latest
       env:
         DB_HOST: ${{ secrets.DB_HOST }}
