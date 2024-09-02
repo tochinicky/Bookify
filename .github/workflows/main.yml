@@ -28,12 +28,15 @@ jobs:
     #   with:
     #     username: ${{ secrets.DOCKER_USERNAME }}
     #     password: ${{ secrets.DOCKER_PASSWORD }}
-
-    - name: Build and push image to ACR
+    - name: Log in to ACR
       run: |
         az acr login --name ${{secrets.ACR_NAME}}
-        docker build -t ${{secrets.ACR_NAME}}.azurecr.io/bookifyapi:latest .
-        docker push ${{secrets.ACR_NAME}}.azurecr.io/bookifyapi:latest
+      env:
+          AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS}}
+    - name: Build and push image to ACR
+      run: |
+        docker build -t ${{secrets.ACR_NAME}}.azurecr.io/bookifyapi:latest -f src/Bookify.Api/Dockerfile .
+        docker push ${{secrets.ACR_NAME}}.azurecr.io/samples/tochinicky/bookifyapi:latest
       env:
         DB_HOST: ${{ secrets.DB_HOST }}
         DB_PORT: ${{ secrets.DB_PORT }}
@@ -72,8 +75,8 @@ jobs:
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         images: |
           "${{secrets.ACR_NAME}}.azurecr.io/samples/tochinicky/bookifyapi:latest"
-        # docker-compose-file: './docker-compose.yml'
-        # slot-name: production
+        docker-compose-file: './docker-compose.prod.yml'
+        slot-name: production
       env:
         DB_HOST: ${{ secrets.DB_HOST }}
         DB_PORT: ${{ secrets.DB_PORT }}
