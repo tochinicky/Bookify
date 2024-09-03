@@ -15,6 +15,7 @@ services:
       - KeyCloak__AdminClientSecret=${ADMIN_CLIENT_SECRET}
       - KeyCloak__AuthClientId=bookify-auth-client
       - KeyCloak__AuthClientSecret=${AUTH_CLIENT_SECRET}
+      - ASPNETCORE_URLS=http://+:5000
 
     ports:
       - 5000:5000
